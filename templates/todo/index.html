@@ -1,0 +1,28 @@
+{% extends 'layout/base.html' %}
+
+{% block 'title' %} Tareas{% endblock  %}
+
+{% block 'style' %}{% endblock  %}
+
+{% block 'content' %}
+<h1>Tareas</h1>
+<form class="search" method="GET" action="{% url 'todo' %}">
+    <input class="search-bar" type='text' name='search' placeholder='Buscar tarea...'>
+    <input class="btn btn-search" type='submit' value='BUSCAR'>
+</form>
+<span class="aux-btns"><a href="{% url 'todo' %}">Ver todas</a><a href="{% url 'todo_create' %}">Añadir</a></span>
+<hr>
+<ul class="list">
+    {% for todo in todos %}
+    <li>{{todo}} 
+        <span>
+            <a href="{% url 'todo_view' id=todo.id %}" class="btn btn-detail">Ver</a>
+            <a href="{% url 'todo_edit' id=todo.id %}" class="btn btn-edit">Editar</a>
+            <a href="{% url 'todo_delete' id=todo.id %}" class="btn btn-delete">Borrar</a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock  %}
+
+{% block 'scripts' %}{% endblock  %}

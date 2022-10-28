@@ -1,13 +1,20 @@
 {% extends 'layout/base.html' %}
 
-{% block 'title' %} Crear Tarea{% endblock  %}
+{% block 'title' %} Editar tarea{% endblock  %}
 
 {% block 'styles' %}{% load static %} <link  href="{% static 'css/forms.css' %}" rel="stylesheet"> {% endblock  %}
 
 {% block 'content' %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="alert-success" {% endif %}>{{message}}</li>
+    {% endfor %}
+<ul>
+{% endif %}
 
 <span class="aux-btns-form"><a href="{% url 'todo' %}">Volver atras</a></span>
-<form action="{% url 'todo_create' %}" method="POST">
+<form action="{% url 'todo_edit' id=id %}" method="POST">
     {% csrf_token %}
     <table>
     {{form.as_table}}

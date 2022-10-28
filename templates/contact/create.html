@@ -5,13 +5,6 @@
 {% block 'styles' %}{% load static %} <link  href="{% static 'css/forms.css' %}" rel="stylesheet"> {% endblock  %}
 
 {% block 'content' %}
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li {% if message.tags %} class="alert-success" {% endif %}>{{message}}</li>
-    {% endfor %}
-<ul>
-{% endif %}
 
 <span class="aux-btns-form"><a href="{% url 'contact' %}">Volver atras</a></span>
 <form action="{% url 'create' %}" method="POST">

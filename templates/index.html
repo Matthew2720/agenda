@@ -5,8 +5,12 @@
 {% block 'style' %}{% endblock  %}
 
 {% block 'content' %}
-
+{% load static %}
 <h1>Bienvenido a tu gestor personal.</h1>
+<div class="cards">
+    <a class="card"href="{% url 'contact' %}">CONTACTO</a>
+    <a class="card"href="{% url 'todo' %}">TAREAS</a>
+</div>
 
 {% endblock  %}
 
