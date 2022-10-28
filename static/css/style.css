@@ -160,4 +160,22 @@ main{
     text-decoration: none;
  }
 
+ .alert-success{
+    width: 80%;
+    padding: 10px;
+    background-color: rgb(22,158,112);
+    color: white;
+ }
+
+ .aux-btns-form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+ }
+
+ .aux-btns-form a {
+    padding-right: 10px;
+    text-decoration: none;
+ }
 /* End Layout settings */

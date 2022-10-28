@@ -9,7 +9,7 @@
     <input class="search-bar" type='text' name='search' placeholder='Buscar contacto...'>
     <input class="btn btn-search" type='submit' value='BUSCAR'>
 </form>
-<span class="aux-btns"><a href="{% url 'contact' %}">Ver todos</a><a href="#">Añadir</a></span>
+<span class="aux-btns"><a href="{% url 'contact' %}">Ver todos</a><a href="{% url 'create' %}">Añadir</a></span>
 <hr>
 <ul class="list">
     {% for contact in contacts %}
@@ -17,7 +17,7 @@
         <span>
             <a href="{% url 'view' id=contact.id %}" class="btn btn-detail">Ver</a>
             <a href="{% url 'edit' id=contact.id %}" class="btn btn-edit">Editar</a>
-            <a href="#" class="btn btn-delete">Borrar</a>
+            <a href="{% url 'delete' id=contact.id %}" class="btn btn-delete">Borrar</a>
         </span>
     </li>
     {% endfor %}
